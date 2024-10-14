@@ -16,7 +16,7 @@ class UddoktaPay
 
     public static function init_payment($requestData)
     {
-        $host = parse_url(env("UDDOKTAPAY_API_URL"),  PHP_URL_HOST);
+        $host = parse_url(env("UDDOKTAPAY_PAYMENT_DOMAIN"),  PHP_URL_HOST);
         $apiUrl = "https://{$host}/api/checkout-v2";
         
         $curl = curl_init();
@@ -60,7 +60,7 @@ class UddoktaPay
 
     public static function verify_payment($invoice_id)
     {
-        $host = parse_url(env("UDDOKTAPAY_API_URL"),  PHP_URL_HOST);
+        $host = parse_url(env("UDDOKTAPAY_PAYMENT_DOMAIN"),  PHP_URL_HOST);
         $verifyUrl = "https://{$host}/api/verify-payment";
 
         $invoice_data = [

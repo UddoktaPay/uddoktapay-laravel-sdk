@@ -115,7 +115,7 @@ class UddoktapayController extends Controller
      *
      * @return void
      */
-    public function cancel()
+    public function cancel( Request $request)
     {
         return 'Payment is cancelled';
     }
